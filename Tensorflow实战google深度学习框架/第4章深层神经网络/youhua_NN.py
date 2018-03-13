@@ -24,8 +24,8 @@ learning_step = tf.train.GradientDescentOptimizer(learning_rate) \
 w = tf.Variable(tf.random_normal([2,1], stddev = 1,seed = 1))
 y = tf.matmul(x,w)
 
-#loss  =tf.reduce_mean(tf.square(y_ - y)) +
- #tf.contriblayers.l2_regularizer(lambda)(w)
+loss  =tf.reduce_mean(tf.square(y_ - y)) +
+ tf.contriblayers.l2_regularizer(lambda)(w)
 
 #########################
 weights = tf.constant([[1.0,-2.0],[-3.0,4.0]])
@@ -48,7 +48,7 @@ def get_weight(shape, lambda):
     #add_to_collection函数将这个新生成变量的L2正则化损失项加入集合
     #这个函数的第一个参数'losses'是集合的名字，第二个参数是要加入这个集合的内容
     tf.add_to_collection(
-        'losses', tf.contrib.layers.l2_regularizer(lambda),(var))
+        'losses', tf.contrib.layers.l2_regularizer(lambda)(var))
     #返回生成的变量
     return var
 
