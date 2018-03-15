@@ -6,7 +6,7 @@ import tensorflow as tf
 from tensorfloe.examples.tutorials.mnist import input_data
 
 #加载mnist_inference.py中定义的常量和前向传播的函数
-import 5.5_mnist_inference
+import mnist_inference
 
 #配置神经网络的参数
 BATCH_SIZE = 100
